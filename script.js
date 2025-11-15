@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
 
-    document.addEventListener('DOMContentLoaded', () => {
+    function loadTasks() {
     
     // Get the stored string (use the correct key: 'tasks')
     let stringListItems = localStorage.getItem('tasks');
@@ -19,8 +19,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
         document.body.appendChild(newDiv);
     }
+    }
 
-});
+
 
 
     
