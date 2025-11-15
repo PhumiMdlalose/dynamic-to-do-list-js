@@ -1,40 +1,29 @@
 document.addEventListener('DOMContentLoaded', function() {
 
-    /*select DOM elements
-    const addButton = document.getElementById('add-task-btn');
-    const taskInput = document.getElementById('task-input');
-    const taskList = document.getElementById('task-list');
+    document.addEventListener('DOMContentLoaded', () => {
+    
+    // Get the stored string (use the correct key: 'tasks')
+    let stringListItems = localStorage.getItem('tasks');
 
-    //create the task function
-    const addTask = () => {
-        const taskText = taskInput.value.trim();
-        if (taskText == '') {
-            alert('Please enter a task.');
-            return;
-        }
+    // Check if something exists in localStorage
+    if (stringListItems) {
 
-        task creation and removal
-        const listItem = document.createElement('li');
-        listItem.textContent = taskText;
+        // Convert JSON string → array
+        let objectList = JSON.parse(stringListItems);
 
-        const removeButton = document.createElement('button');
-        removeButton.classList.add('remove-btn');
-        removeButton.textContent = 'Remove';
-        removeButton.onclick = () => {
-            taskList.removeChild(listItem);
-            removeButton.appendChild(listItem);
-            taskInput.value = '';
-        })
+        // Create a div (your original idea)
+        const newDiv = document.createElement('div');
 
-        attach event listeners
-        addButton.addEventListener('click', addTask);
-        taskInput.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') {
-                addTask();
-            }
-        })*/
+        // Show the list in the div (simple display)
+        newDiv.innerHTML = objectList.join(', ');
 
-        // Create the task function
+        document.body.appendChild(newDiv);
+    }
+
+});
+
+
+    
 const addTask = () => {
     const taskText = taskInput.value.trim();
 
@@ -76,11 +65,13 @@ taskInput.addEventListener('keypress', (event) => {
 
  // Initialize the load task:
  
- let stringListItems = localStorage.getItem('taskList');
+ /*let stringListItems = localStorage.getItem('taskList');
     if (stringListItems.listItem >= 1) {
         let objectList = JSON.parse(stringListItems);
         const newDiv = document.createElement('div');
         newDiv.innerHTML = objectList;
         document.body.appendChild(newDiv);
-    }
+    }*/
+
+        
 
