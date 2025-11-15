@@ -74,3 +74,13 @@ taskInput.addEventListener('keypress', (event) => {
 
     document.addEventListener('DOMContentLoaded', addTask);
 
+ // Initialize the load task:
+ 
+ let stringListItems = localStorage.getItem('taskList');
+    if (stringListItems.listItem >= 1) {
+        let objectList = JSON.parse(stringListItems);
+        const newDiv = document.createElement('div');
+        newDiv.innerHTML = objectList;
+        document.body.appendChild(newDiv);
+    }
+
