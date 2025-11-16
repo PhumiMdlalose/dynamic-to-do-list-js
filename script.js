@@ -50,6 +50,13 @@ const addTask = () => {
     taskList.appendChild(listItem);
 
     taskInput.value = '';
+
+    //save tasks to Local Storage whenever a new task is added
+    const tasks = [];
+    taskList.querySelectorAll('li').forEach(item => {
+        tasks.push(item.firstChild.textContent);
+    });
+    localStorage.setItem('tasks', JSON.stringify(tasks));
 };
 
 // event listeners
@@ -63,16 +70,6 @@ taskInput.addEventListener('keypress', (event) => {
 });
 
     document.addEventListener('DOMContentLoaded', addTask);
-
- // Initialize the load task:
- 
- /*let stringListItems = localStorage.getItem('taskList');
-    if (stringListItems.listItem >= 1) {
-        let objectList = JSON.parse(stringListItems);
-        const newDiv = document.createElement('div');
-        newDiv.innerHTML = objectList;
-        document.body.appendChild(newDiv);
-    }*/
 
         
 
