@@ -58,6 +58,10 @@ const addTask = () => {
     });*/
     tasks.push(taskText);
     localStorage.setItem('tasks', JSON.stringify(tasks));
+
+    //When a task is removed by clicking the “Remove” button, also remove it from the tasks array in your JavaScript.
+    tasks = tasks.filter(task => task !== taskText);
+    localStorage.setItem('tasks', JSON.stringify(tasks));
 };
 
 // event listeners
