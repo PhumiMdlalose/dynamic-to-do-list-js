@@ -53,9 +53,10 @@ const addTask = () => {
 
     //save tasks to Local Storage whenever a new task is added
     const tasks = [];
-    taskList.querySelectorAll('li').forEach(item => {
+    /*taskList.querySelectorAll('li').forEach(item => {
         tasks.push(item.firstChild.textContent);
-    });
+    });*/
+    tasks.push(taskText);
     localStorage.setItem('tasks', JSON.stringify(tasks));
 };
 
